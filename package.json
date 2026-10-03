@@ -1,0 +1,25 @@
+{
+  "name": "pe32plus-import-inspector",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "离线 PE32+ 导入表与 RVA 地址映射解析后端（API + CLI）",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "bin": {
+    "peinspect": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/cli/index.js serve",
+    "test": "tsc -p tsconfig.json && node --test dist/test/*.test.js",
+    "fixtures": "tsc -p tsconfig.json && node dist/test/generate-fixtures.js",
+    "demo": "npm run fixtures && node dist/src/cli/index.js demo",
+    "cli": "node dist/src/cli/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "typescript": "^5.7.2"
+  }
+}
